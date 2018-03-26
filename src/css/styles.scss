@@ -1,0 +1,104 @@
+$sf-green: #b5ffe1;
+$sf-blue: #6ab7c8;
+$sf-red: #df0052;
+$black-text: #404040;
+$bg-white: #fdfeff;
+$bg-title-white: rgba(253, 254, 255, 0.85); 
+
+body {
+  background: $sf-green;
+  background: linear-gradient(to bottom left, $sf-green, $sf-blue);
+  margin: 5% 10% 10%;
+  
+  color: $black-text;
+  font-family: 'Montserrat', sans-serif;
+  filter: drop-shadow(0 0 10px $sf-blue);
+
+  header {
+    background-color: $bg-title-white;
+    padding: 1px 25px;
+    border-radius: 25px 25px 0 0;
+    min-width: 800px;
+    color: $sf-red;
+  }
+
+  #sfmuni {
+    background-color: $bg-white;
+    padding: 0 25px 30px;
+    border-radius: 0 0 25px 25px;
+    display: flex;
+    flex-direction: column;
+    min-width: 800px;
+    
+    #filter {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+
+      .label {
+        padding: 5px;
+        border-radius: 4px;
+        margin: 3px 0;
+        font-size: 0.8rem;
+        background-color: $sf-green;
+        user-select: none;
+        cursor: pointer;
+
+        &.disabled {
+          background-color: lighten($sf-green, 10%);
+        }
+      }
+    }
+
+    #sfmap {
+      padding: 25px 0;
+      text-align: center;
+      fill: none;
+
+      #neighbourhoods {
+        fill: lighten($sf-blue, 30%);
+        stroke: $sf-blue;
+        stroke-width: 1.5;
+      }
+      #streets {
+        stroke: lighten($sf-blue, 20%);
+      }
+      #arteries {
+        stroke: lighten($sf-blue, 15%);
+      }
+      #freeways { 
+        stroke: lighten($sf-blue, 10%);
+        stroke-width: 0.5;
+      }
+      #vehicles {
+        fill: $sf-red;
+
+        .vehicle {
+          image {
+            width: 20px;
+          }
+
+          .popup-text {
+            display: none;
+
+            rect {
+              fill: $bg-white;
+              stroke: $sf-red;
+              height: 23px;
+              width: 70px;
+            }
+
+            text {
+              fill: $black-text;
+            }
+          }
+
+          &:hover .popup-text {
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
