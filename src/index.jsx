@@ -27,6 +27,7 @@ export default class Root extends React.Component {
             <div>
                 <header><h1>SF Muni</h1></header>
                 <div id="sfmuni">
+                    <p>Hi! If you're not seeing any buses on the map, please run this page over http as the NextBus API service doesn't allow https requests :(</p>
                     <SFMap visible={this.state.visible}/>
                     <Filter onClick={v => this.updateVisible(v)}/>
                 </div>

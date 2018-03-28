@@ -1,0 +1,4 @@
+- add a select/deselect all option at the bottom
+- change the way buses appear/disappear on the map via CSS rather than an update
+- move popup text to separate SVG layer to improve visibility
+- add arrows to the buses to increase visibility of direction?
